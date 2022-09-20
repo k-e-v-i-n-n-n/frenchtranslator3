@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: 'Avenir'; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Avenir';
+  display: flex;
+  flex-direction: column;
+  justify-content : center;
+  align-items : center;
+  
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 30px;
+
+}
+
+
+h1{
+
+  font-size: 100px;
+  margin: 2px;
+  text-align: center;
+
+}
+
+h2{
+  font-size: 24px;
+  font-weight: normal;
+  margin: 2px;
+
+}
+
+h3{
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 12px;
+
+}
+
+
+.header{
+
+  display: flex;
+  flex-direction: column;
+  justify-content : center;
+  align-items : center;
+  align-content: flex-start;
+  font-family: 'Avenir';
+
+  
+}
+.nav{
+
+  display: flex;
+  flex-direction: row;
+  justify-content : space-evenly;
+  align-items : center;
+  height: 100px;
+
+  /* width: 1000px; */
+  border-style: solid;
+  border-radius: 7px;
+  border-width: 2px;
+  border-color: black;
+  background-color: rgb(156, 156, 156);
+  font-family: 'Avenir';
+  font-size: 32px;
+  color: black;
+}
+
+.nav-items{
+color:black;
+text-decoration: none;
+font-weight: bold;
+
+}
+
+.nav-items:hover{
+
+  color: rgb(255, 255, 255);
+  
+}
+
+.text-parent{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+textarea{
+  width:500px;
+  height: 350px;
+  padding: 12px;
+  color: rgb(0, 0, 0);
+  resize: none;
+  background-color: transparent;
+  margin: 7px 7px 7px 7px;
+  border-radius: 7px;
+  border-width: 2px;
+  border-color: black;
+  font-family: 'Avenir';
+  font-size:20px;
+}
+
+.button-container{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+.button-28 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 7px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  margin: 7px 10px 20px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  height: 60px;
+  will-change: transform;
+  
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
