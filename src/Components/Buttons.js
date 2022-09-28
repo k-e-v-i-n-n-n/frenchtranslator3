@@ -1,17 +1,58 @@
-import React from 'react'
+import React from "react";
+// import { json } from "react-router-dom";
 
-function Buttons(){
+function Buttons({ textToTranslate, translation, getTranslation }) {
+  const newWord = {
+    id: "",
+    French: translation,
+    English: textToTranslate,
+    Type: "Word",
+  };
 
-    return(
+  console.log('new word', newWord)
 
-        <div className='button-container'>
+  function saveWord() {
 
-        <button className='button-28'>Translate</button>
-        <button className='button-28'>Save to Words</button>
-        <button className='button-28'>Save to Phrases</button>
+    const newWord = {
+      id: "",
+      French: translation,
+      English: textToTranslate,
+      Type: "Word",
+    };
 
-        </div>
-    )
-}
+    fetch("http://localhost:3001/words_n_phrases", {
+      method: "POST",
+      body: JSON.stringify(newWord),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })};
 
-export default Buttons 
+const savePhrase = () => {    
+      const newPhrase = {
+      id: "",
+      French: translation,
+      English: textToTranslate,
+      Type: "Phrase",
+    };
+    
+    fetch("http://localhost:3001/words_n_phrases", {
+      method: "POST",
+      body: JSON.stringify(newPhrase),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })};
+
+    return (
+      <div className="button-container">
+        <button className="button-28" onClick={getTranslation} >Translate</button>
+        <button className="button-28" onClick={saveWord}>
+          Save Word
+        </button>
+        <button className="button-28" onClick={savePhrase}>Save Phrase</button>
+      </div>
+    );
+    }
+
+export default Buttons;

@@ -8,11 +8,11 @@ const app = express();
 app.use(cors());
 
 app.get("/translate", async (req, res) => {
-  const { textToTranslate } = req.query;
+  const { textToTranslate, translatedLang, selectedLang } = req.query;
 
   const options = {
     method: "GET",
-    params: { text: textToTranslate, tl: "fr", sl: "en" },
+    params: { text: textToTranslate, tl: translatedLang, sl: selectedLang },
     headers: {
       "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
       "X-RapidAPI-Host": process.env.RAPID_API_HOST,

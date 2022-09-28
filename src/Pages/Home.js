@@ -1,10 +1,9 @@
 import React from 'react'
-import Nav from "../Components/Nav.js"
-import Header from "../Components/Header.js";
 import Text from "../Components/Text.js";
 import Buttons from "../Components/Buttons.js";
+import SwitchLang from "../Components/SwitchLang";
 
-const Home = ( {textToTranslate, setTextToTranslate, setTranslation, getTranslation, translation}) => {
+const Home = ( {textToTranslate, setTextToTranslate, setTranslation, getTranslation, translation, selectedLang, invertLang, clearText}) => {
   return (
     <div className="App">
 
@@ -14,11 +13,14 @@ const Home = ( {textToTranslate, setTextToTranslate, setTranslation, getTranslat
           textToTranslate={textToTranslate}
           setTextToTranslate={setTextToTranslate}
           setTranslation={setTranslation}
+          selectedLang={selectedLang}
+          clearText={clearText}
         />
+        <SwitchLang invertLang={invertLang} />
         <Text style="output" translation={translation} />
       </div>
-      <div onClick={getTranslation}>
-        <Buttons />
+      <div>
+        <Buttons textToTranslate={textToTranslate} translation={translation} getTranslation={getTranslation}/>
       </div>
     </div>
   );

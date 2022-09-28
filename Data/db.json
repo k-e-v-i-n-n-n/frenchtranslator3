@@ -1,13 +1,46 @@
 {
-    "words-n-phrases": [
-
-       {
-        "id": 0,
-        "French": "Etincelle",
-        "English": "Spark",
-        "Type": "Word" 
+  "words_n_phrases": [
+    {
+      "id": 0,
+      "French": "étincelle",
+      "English": "spark",
+      "Type": "Word"
+    },
+    {
+      "id": 1,
+      "French": "jolie",
+      "English": "pretty",
+      "Type": "Word"
+    },
+    {
+      "id": 2,
+      "French": "Je jette l'éponge",
+      "English": "To throw in the towel or give up",
+      "Type": "Phrase"
+    },
+    {
+      "id": 3,
+      "French": "jetter",
+      "English": "to throw",
+      "Type": "Word"
+    },
+    {
+      "id": 4,
+      "French": "ça ne casse pas trois pattes à un canard",
+      "English": "it's not that great",
+      "Type": "Phrase"
+    },
+    {
+      "id": 5,
+      "French": "magnifique",
+      "English": "wonderful",
+      "Type": "Word"
+    },
+    {
+      "id": 6,
+      "French": "Je me sens submergé",
+      "English": "I feel overwhelmed",
+      "Type": "Phrase"
     }
-    ]
-
-
+  ]
 }
