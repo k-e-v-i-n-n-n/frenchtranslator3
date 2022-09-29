@@ -9,7 +9,7 @@ const Home = ( {textToTranslate, setTextToTranslate, setTranslation, getTranslat
 
       <div className="text-parent">
         <Text
-          style={"input"}
+          id="input"
           textToTranslate={textToTranslate}
           setTextToTranslate={setTextToTranslate}
           setTranslation={setTranslation}
@@ -17,7 +17,7 @@ const Home = ( {textToTranslate, setTextToTranslate, setTranslation, getTranslat
           clearText={clearText}
         />
         <SwitchLang invertLang={invertLang} />
-        <Text style={"output"} translation={translation} />
+        <Text id="output" translation={translation} />
       </div>
       <div>
         <Buttons textToTranslate={textToTranslate} translation={translation} getTranslation={getTranslation}/>

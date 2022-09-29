@@ -1,7 +1,7 @@
 import React from "react";
 
 function Text({
-  style,
+  id,
   textToTranslate,
   setTextToTranslate,
   translation,
@@ -16,24 +16,24 @@ function Text({
             // selectedLang === "en" ? "Type word or phrase..." : "Translation"}
             
           
-            (style === "input" && selectedLang === 'en')? "Enter English word or phrase..." :
-            (style === "input" && selectedLang === 'fr') ? 'Saisir un mot ou une phrase en Français... ': 
+            (id === "input" && selectedLang === 'en')? "Enter English word or phrase..." :
+            (id === "input" && selectedLang === 'fr') ? 'Saisir un mot ou une phrase en Français... ': 
             "Translation/Traduction" }
-            //  (style === 'output' && selectedLang === 'fr') ?
-            //  style === "input" ? selectedLang === 'en'? "Enter English word or phrase..." : 
-            // style === "input" ? selectedLang === 'fr'? "Saisir mot ou phrase en Français..." : 
-            // style === 'output'? selectedLang === 'en'? "Translation" :
-            // style === 'output' ? selectedLang === 'fr'? "Traduction":"null" }
+            //  (id === 'output' && selectedLang === 'fr') ?
+            //  id === "input" ? selectedLang === 'en'? "Enter English word or phrase..." : 
+            // id === "input" ? selectedLang === 'fr'? "Saisir mot ou phrase en Français..." : 
+            // id === 'output'? selectedLang === 'en'? "Translation" :
+            // id === 'output' ? selectedLang === 'fr'? "Traduction":"null" }
 
 
-        disabled={style === "output"}
+        disabled={id === "output"}
         onClick={clearText}
         onChange={(e) => {
           console.log("this is input translation", textToTranslate);
 
           setTextToTranslate(e.target.value);
         }}
-        value={style === "input" ? textToTranslate : translation}
+        value={id === "input" ? textToTranslate : translation}
       ></textarea>
     </div>
   );
