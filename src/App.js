@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import Words from "./Pages/Words";
 import Phrases from "./Pages/Phrases";
 import Header from "./Components/Header";
-import Nav from "./Components/Nav";
+import Nav from "./Components/Nav"
 
 import axios from "axios";
 
