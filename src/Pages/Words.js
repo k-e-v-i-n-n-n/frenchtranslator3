@@ -10,7 +10,7 @@ const [dataState, setDataState] = useState([])
 
 
   useEffect(() => {
-    fetch("http://localhost:3001/words_n_phrases")
+    fetch(process.env.REACT_APP_DATABASE)
     .then((r) => r.json())
     .then((data) => setDataState(data))
     .catch(err => console.log('This is the error message', err))

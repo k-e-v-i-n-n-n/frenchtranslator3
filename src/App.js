@@ -18,7 +18,7 @@ function App() {
 
   const getTranslation = async () => {
     const data = { textToTranslate, selectedLang, translatedLang };
-    const response = await axios.get("http://localhost:8000/translate", {
+    const response = await axios.get(proces.env.REACT_APP_TRANSLATE, {
       params: data,
     });
     console.log("response from front", response);
