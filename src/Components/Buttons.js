@@ -20,7 +20,7 @@ function Buttons({ textToTranslate, translation, getTranslation }) {
       Type: "Word",
     };
 
-    fetch("http://localhost:3001/words_n_phrases", {
+    fetch(process.env.REACT_APP_FETCH, {
       method: "POST",
       body: JSON.stringify(newWord),
       headers: {
@@ -36,7 +36,7 @@ const savePhrase = () => {
       Type: "Phrase",
     };
     
-    fetch("http://localhost:3001/words_n_phrases", {
+    fetch(process.env.REACT_APP_FETCH, {
       method: "POST",
       body: JSON.stringify(newPhrase),
       headers: {

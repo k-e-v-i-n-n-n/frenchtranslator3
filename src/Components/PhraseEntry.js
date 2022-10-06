@@ -3,7 +3,7 @@ import React from "react";
 const PhraseEntry = ({ french, english, id }) => {
   const handleDelete = (e) => {
     e.target.parentNode.remove();
-    fetch(`http://localhost:3001/words_n_phrases/${id}`, {
+    fetch(`${process.env.REACT_APP_FETCH}/${id}`, {
       
       method: "DELETE"
       })
