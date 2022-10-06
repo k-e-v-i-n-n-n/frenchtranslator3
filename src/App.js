@@ -16,8 +16,10 @@ function App() {
   const [selectedLang, setSelectedLang] = useState('en')
   const [translatedLang, setTranslatedLang] =useState('fr')
 
+  console.log('trans load', translatedLang, 'select load', selectedLang)
+
   const getTranslation = async () => {
-    const data = { textToTranslate, selectedLang, translatedLang };
+    const data = { textToTranslate, selectedLang, translatedLang, setTranslation };
     const response = await axios.get(process.env.REACT_APP_TRANSLATE, {
       params: data,
     });
@@ -31,6 +33,7 @@ function App() {
     setSelectedLang(translatedLang)
     setTranslatedLang(selectedLang)
     clearText()
+    console.log('trans', translatedLang, 'select', selectedLang)
 
   }
 
