@@ -1,8 +1,8 @@
------French to English Translator-----
+-----French/English Translator-----
 
 Overview
 
-Welcome to my French to English translator, which can be used to translate between the two languages, as well as store words or phrases you'd like to reference later.
+Welcome to my French/English translator, which can be used to translate between the two languages, as well as store words or phrases you'd like to reference later.
 
 Translate
 
