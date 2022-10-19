@@ -1,68 +1,75 @@
-import React from "react"
-import { useState} from "react"
-import { HashRouter, Route, Routes } from "react-router-dom"
+import React from "react";
+import { useState } from "react";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./Pages/Home";
 import Words from "./Pages/Words";
 import Phrases from "./Pages/Phrases";
 import Header from "./Components/Header";
-import Nav from "./Components/Nav"
+import Nav from "./Components/Nav";
 
 import axios from "axios";
 
 function App() {
-  const [textToTranslate, setTextToTranslate] = useState("");
-  const [translation, setTranslation] = useState("");
-  const [selectedLang, setSelectedLang] = useState('en')
-  const [translatedLang, setTranslatedLang] =useState('fr')
 
-  console.log('trans load', translatedLang, 'select load', selectedLang)
+  
+  const [textToTranslate, setTextToTranslate] = useState("");
+
+
+  const [translation, setTranslation] = useState("");
+  const [selectedLang, setSelectedLang] = useState("en");
+  const [translatedLang, setTranslatedLang] = useState("fr");
+
+  console.log("trans load", translatedLang, "select load", selectedLang);
 
   const getTranslation = async () => {
-    const data = { textToTranslate, selectedLang, translatedLang, setTranslation };
+    const data = {
+      textToTranslate,
+      selectedLang,
+      translatedLang,
+      setTranslation,
+    };
     const response = await axios.get(process.env.REACT_APP_TRANSLATE, {
       params: data,
     });
     console.log("response from front", response);
     setTranslation(response.data);
-    
   };
 
-  const invertLang = () =>{
-
-    setSelectedLang(translatedLang)
-    setTranslatedLang(selectedLang)
-    clearText()
-    console.log('trans', translatedLang, 'select', selectedLang)
-
-  }
+  const invertLang = () => {
+    setSelectedLang(translatedLang);
+    setTranslatedLang(selectedLang);
+    clearText();
+    console.log("trans", translatedLang, "select", selectedLang);
+  };
 
   const clearText = () => {
-
-    setTextToTranslate('')
-    setTranslation('')
-
-  }
-
-
+    setTextToTranslate("");
+    setTranslation("");
+  };
 
   return (
     <HashRouter>
       <Header />
       <Nav />
       <Routes>
-        <Route exact path="/" element={<Home 
-          textToTranslate={textToTranslate}
-          setTextToTranslate={setTextToTranslate}
-          setTranslation={setTranslation}
-          getTranslation={getTranslation}
-          translation={translation}
-          invertLang={invertLang}
-          selectedLang={selectedLang}
-          clearText={clearText}
-          
-          />} />
-        <Route exact path="/words" element={<Words/>} />
+        <Route
+          exact
+          path="/"
+          element={
+            <Home
+              textToTranslate={textToTranslate}
+              setTextToTranslate={setTextToTranslate}
+              setTranslation={setTranslation}
+              getTranslation={getTranslation}
+              translation={translation}
+              invertLang={invertLang}
+              selectedLang={selectedLang}
+              clearText={clearText}
+            />
+          }
+        />
+        <Route exact path="/words" element={<Words />} />
         <Route exact path="/phrases" element={<Phrases />} />
       </Routes>
     </HashRouter>
