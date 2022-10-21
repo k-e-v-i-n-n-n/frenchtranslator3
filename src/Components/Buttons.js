@@ -1,58 +1,26 @@
 import React from "react";
+import useFetch from "../CustomHooks.js/UseFetch";
 
-function Buttons({ textToTranslate, translation, getTranslation }) {
-  const newWord = {
-    id: "",
-    French: translation,
-    English: textToTranslate,
-    Type: "Word",
-  };
+function Buttons({ translationObject, getTranslationFn }) {
 
-  console.log("new word", newWord);
+const fetch = useFetch
 
-  function saveWord() {
-    const newWord = {
-      id: "",
-      French: translation,
-      English: textToTranslate,
-      Type: "Word",
-    };
+const saveTranslationButton = (e) => {
+  translationObject.type = e.target.name
+  
+  fetch("saveTranslation", translationObject)
 
-    fetch(process.env.REACT_APP_FETCH, {
-      method: "POST",
-      body: JSON.stringify(newWord),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
-
-  const savePhrase = () => {
-    const newPhrase = {
-      id: "",
-      French: translation,
-      English: textToTranslate,
-      Type: "Phrase",
-    };
-
-    fetch(process.env.REACT_APP_FETCH, {
-      method: "POST",
-      body: JSON.stringify(newPhrase),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  };
+}
 
   return (
     <div className="button-container">
-      <button className="button-28" onClick={getTranslation}>
+      <button className="button-28" onClick={getTranslationFn}>
         Translate
       </button>
-      <button className="button-28" onClick={saveWord}>
+      <button name = "Word" className="button-28" onClick={saveTranslationButton}>
         Save Word
       </button>
-      <button className="button-28" onClick={savePhrase}>
+      <button name = "Phrase" className="button-28" onClick={saveTranslationButton}>
         Save Phrase
       </button>
     </div>

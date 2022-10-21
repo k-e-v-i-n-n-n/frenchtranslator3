@@ -2,12 +2,8 @@ import React from 'react'
 import PhraseEntry from '../Components/PhraseEntry'
 import {useState, useEffect} from 'react'
 
-
 const Phrases = () => {
-   
 const [phraseState, setPhraseState] = useState([])
-
-
 
 useEffect(() => {
   fetch(process.env.REACT_APP_DATABASE)
@@ -19,11 +15,10 @@ useEffect(() => {
 
 console.log("this is phraseState", phraseState)
 
-const phraseFiltered = phraseState.filter(entry => entry.Type === 'Phrase')
-
+const phraseFiltered = phraseState.filter(entry => entry.type === 'Phrase')
 
 const phraseMap = phraseFiltered.map((entry) => {
-  return (<PhraseEntry french={entry.French.toLowerCase()} english={entry.English.toLowerCase()} id={entry.id}/>)
+  return (<PhraseEntry french={entry.fr.toLowerCase()} english={entry.en.toLowerCase()} id={entry.id}/>)
   
 })
 

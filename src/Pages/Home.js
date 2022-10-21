@@ -1,29 +1,48 @@
-import React from 'react'
+import React from "react";
 import Text from "../Components/Text.js";
 import Buttons from "../Components/Buttons.js";
 import SwitchLang from "../Components/SwitchLang";
 
-const Home = ( {textToTranslate, setTextToTranslate, setTranslation, getTranslation, translation, selectedLang, invertLang, clearText}) => {
+const Home = ({
+  textToTranslate,
+  setTextToTranslate,
+  getTranslationFn,
+  getTranslation,
+  translation,
+  selectedLang,
+  changeLang,
+  invertLang,
+  clearText,
+  setTranslationObject,
+  translationObject,
+}) => {
   return (
     <div className="App">
-
       <div className="text-parent">
         <Text
           id="input"
-          textToTranslate={textToTranslate}
-          setTextToTranslate={setTextToTranslate}
-          setTranslation={setTranslation}
+          translationObject={translationObject}
+          setTranslationObject={setTranslationObject}
           selectedLang={selectedLang}
           clearText={clearText}
+         
         />
-        <SwitchLang invertLang={invertLang} />
-        <Text id="output" translation={translation} />
+        <SwitchLang changeLang={changeLang} />
+        <Text id="output" translationObject={translationObject}
+          setTranslationObject={setTranslationObject}
+          selectedLang={invertLang}
+          clearText={clearText} />
       </div>
       <div>
-        <Buttons textToTranslate={textToTranslate} translation={translation} getTranslation={getTranslation}/>
+        <Buttons
+          translationObject={translationObject}
+          textToTranslate={textToTranslate}
+          translation={translation}
+          getTranslationFn={getTranslationFn}
+        />
       </div>
     </div>
   );
 };
 
-export default Home
+export default Home;

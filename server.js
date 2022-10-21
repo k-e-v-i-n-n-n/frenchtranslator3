@@ -6,18 +6,11 @@ const { text } = require("express");
 require("dotenv").config();
 const app = express();
 
-// const jsonServer = require('json-server');
-// const server = jsonServer.create();
-// const router = jsonServer.router('db.json');
-// const middlewares = jsonServer.defaults();
-
-// server.use(middlewares);
-// server.use(router);
 
 app.use(cors());
 
 app.get("/translate", async (req, res) => {
-  const { textToTranslate, translatedLang, selectedLang } = req.query;
+  const { setTranslationObject, textToTranslate, translatedLang, selectedLang } = req.query;
 
   const options = {
     method: "GET",
@@ -36,7 +29,7 @@ app.get("/translate", async (req, res) => {
     );
     res.json(response.data.data.translation);
     console.log("This is the response", response.data.data.translation);
-    // setTranslation(response.data.data.translation);
+    setTranslationObject({...translationObject, [translatedLang]: response.data.data.translation});
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: err });

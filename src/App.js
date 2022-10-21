@@ -7,36 +7,46 @@ import Words from "./Pages/Words";
 import Phrases from "./Pages/Phrases";
 import Header from "./Components/Header";
 import Nav from "./Components/Nav";
-
-import axios from "axios";
+// import axios from "axios";
+import useFetch from "./CustomHooks.js/UseFetch";
 
 function App() {
 
-  
-  const [textToTranslate, setTextToTranslate] = useState("");
-
-
-  const [translation, setTranslation] = useState("");
   const [selectedLang, setSelectedLang] = useState("en");
   const [translatedLang, setTranslatedLang] = useState("fr");
+  const [translationObject, setTranslationObject] = useState({
+    en: "",
+    fr: "",
+    type: "",
+  });
 
-  console.log("trans load", translatedLang, "select load", selectedLang);
 
-  const getTranslation = async () => {
-    const data = {
-      textToTranslate,
-      selectedLang,
-      translatedLang,
-      setTranslation,
-    };
-    const response = await axios.get(process.env.REACT_APP_TRANSLATE, {
-      params: data,
-    });
-    console.log("response from front", response);
-    setTranslation(response.data);
+  // focus of project is more on translation form than display of json data
+
+  const fetch = useFetch;
+
+  const getTranslationFn = () => {
+
+    const textToTranslate = translationObject[selectedLang]
+
+    fetch(
+      "getTranslation",
+      {
+        textToTranslate,
+        selectedLang,
+        translatedLang,
+        translationObject,
+        setTranslationObject
+        
+      },
+
+      setTranslationObject
+
+    );
   };
 
-  const invertLang = () => {
+
+  const changeLang = () => {
     setSelectedLang(translatedLang);
     setTranslatedLang(selectedLang);
     clearText();
@@ -44,8 +54,8 @@ function App() {
   };
 
   const clearText = () => {
-    setTextToTranslate("");
-    setTranslation("");
+    setTranslationObject({...translationObject,en: "", fr: ""})
+
   };
 
   return (
@@ -58,14 +68,14 @@ function App() {
           path="/"
           element={
             <Home
-              textToTranslate={textToTranslate}
-              setTextToTranslate={setTextToTranslate}
-              setTranslation={setTranslation}
-              getTranslation={getTranslation}
-              translation={translation}
-              invertLang={invertLang}
+            setTranslationObject={setTranslationObject}
+            translationObject={translationObject}
+              getTranslationFn={getTranslationFn}
+
+              invertLang={translatedLang}
               selectedLang={selectedLang}
               clearText={clearText}
+              changeLang={changeLang}
             />
           }
         />

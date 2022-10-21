@@ -1,10 +1,10 @@
 
 
-const SwitchLang = ({invertLang}) => {
+const SwitchLang = ({changeLang}) => {
 
     return(
 
-        <button className='switch' onClick={invertLang} > {'\u21C4'} </button>
+        <button className='switch' onClick={changeLang} > {'\u21C4'} </button>
     )
 }
 

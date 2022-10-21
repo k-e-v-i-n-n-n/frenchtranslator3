@@ -2,45 +2,45 @@
   "words_n_phrases": [
     {
       "id": 0,
-      "French": "étincelle",
-      "English": "spark",
-      "Type": "Word"
+      "fr": "étincelle",
+      "en": "spark",
+      "type": "Word"
     },
     {
       "id": 1,
-      "French": "jolie",
-      "English": "pretty",
-      "Type": "Word"
+      "fr": "jolie",
+      "en": "pretty",
+      "type": "Word"
     },
     {
       "id": 2,
-      "French": "Je jette l'éponge",
-      "English": "To throw in the towel or give up",
-      "Type": "Phrase"
+      "fr": "Je jette l'éponge",
+      "en": "To throw in the towel or give up",
+      "type": "Phrase"
     },
     {
       "id": 3,
-      "French": "jetter",
-      "English": "to throw",
-      "Type": "Word"
+      "fr": "jetter",
+      "en": "to throw",
+      "type": "Word"
     },
     {
       "id": 4,
-      "French": "ça ne casse pas trois pattes à un canard",
-      "English": "it's not that great",
-      "Type": "Phrase"
+      "fr": "ça ne casse pas trois pattes à un canard",
+      "en": "it's not that great",
+      "type": "Phrase"
     },
     {
       "id": 5,
-      "French": "magnifique",
-      "English": "wonderful",
-      "Type": "Word"
+      "fr": "magnifique",
+      "en": "wonderful",
+      "type": "Word"
     },
     {
       "id": 6,
-      "French": "Je me sens submergé",
-      "English": "I feel overwhelmed",
-      "Type": "Phrase"
+      "fr": "Je me sens submergé",
+      "en": "I feel overwhelmed",
+      "type": "Phrase"
     }
   ]
 }

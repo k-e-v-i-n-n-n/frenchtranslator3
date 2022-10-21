@@ -1,5 +1,7 @@
+
 import React from "react"
 import { useState, useEffect } from "react"
+// import useFetch from "../CustomHooks.js/UseFetch"
 
 import WordEntry from "../Components/WordEntry"
 
@@ -7,6 +9,7 @@ const Words = () => {
 
 const [dataState, setDataState] = useState([])
 
+// const fetch = useFetch
 
 
   useEffect(() => {
@@ -19,11 +22,11 @@ const [dataState, setDataState] = useState([])
 
   console.log("this is dataState", dataState)
 
-  const dataFiltered = dataState.filter(entry => entry.Type === 'Word')
+  const dataFiltered = dataState.filter(entry => entry.type === 'Word')
 
 
   const dataMap = dataFiltered.map((entry) => {
-    return (<WordEntry french={entry.French.toLowerCase()} english={entry.English.toLowerCase()} id={entry.id}/>)
+    return (<WordEntry french={entry.fr.toLowerCase()} english={entry.en.toLowerCase()} id={entry.id}/>)
     
   })
 
