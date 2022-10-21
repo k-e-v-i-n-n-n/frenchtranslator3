@@ -7,7 +7,6 @@ import Words from "./Pages/Words";
 import Phrases from "./Pages/Phrases";
 import Header from "./Components/Header";
 import Nav from "./Components/Nav";
-// import axios from "axios";
 import useFetch from "./CustomHooks.js/UseFetch";
 
 function App() {
@@ -68,8 +67,8 @@ function App() {
           path="/"
           element={
             <Home
-            setTranslationObject={setTranslationObject}
-            translationObject={translationObject}
+              setTranslationObject={setTranslationObject}
+              translationObject={translationObject}
               getTranslationFn={getTranslationFn}
 
               invertLang={translatedLang}

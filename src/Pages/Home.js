@@ -5,9 +5,7 @@ import SwitchLang from "../Components/SwitchLang";
 
 const Home = ({
   textToTranslate,
-  setTextToTranslate,
   getTranslationFn,
-  getTranslation,
   translation,
   selectedLang,
   changeLang,
